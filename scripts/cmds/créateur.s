@@ -1,6 +1,6 @@
 module.exports = {
 	config: {
-			name: "Qui es ton créateur",
+			name: "Qui es ton créateur"," qui ta créé",
 			version: "1.0",
 			author: Shibai Otsutsuki,
 			countDown: 5,
@@ -15,6 +15,6 @@ onChat: async function({
 	message,
 	getLang
 }) {
-	if (event.body && event.body.toLowerCase() == "qui es ton créateur") return message.reply("J'ai été créé par mon sublime intelligent maître vénéré Daimyo SHIBAI OTSUTSUKI 😰");
+	if (event.body && event.body.toLowerCase() == "qui es ton créateur","qui ta créé") return message.reply("J'ai été créé par mon sublime intelligent maître vénéré David mpongo 🦅 😰");
 }
 };
