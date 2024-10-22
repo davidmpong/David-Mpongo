@@ -27,14 +27,14 @@ module.exports = {
 			notification: "Thông báo từ admin bot đến tất cả nhóm chat (không phản hồi tin nhắn này)",
 			sendingNotification: "Bắt đầu gửi thông báo từ admin bot đến %1 nhóm chat",
 			sentNotification: "✅ Đã gửi thông báo đến %1 nhóm thành công",
-			errorSendingNotification: "Có lỗi xảy ra khi gửi đến %1 nhóm:\n%2"
+			errorSendingNotification: "Có lỗi xảy ra khi gửi đến %1 nhóm:\%2"
 		},
 		en: {
 			missingMessage: "Please enter the message you want to send to all groups",
-			notification: "Shibai Otsutsuki vous parle",
-			sendingNotification: "Start sending the noti from admin bot to %1 chat groups",
-			sentNotification: "✅ Sent notification to %1 groups successfully",
-			errorSendingNotification: "An error occurred while sending to %1 groups:\n%2"
+			notification: "╔☯︎═════════════☯︎╗\🔔 𝑵𝒐𝒕𝒊𝒇𝒊𝒄𝒂𝒕𝒊𝒐𝒏 𝒻𝒓𝒐𝒎 𝒂𝒅𝒎𝒊𝒏 🔔",
+			sendingNotification: "Start sending notification from admin bot to %1 chat groups",
+			sentNotification: "✅ Sent notification to %13 groups successfully",
+			errorSendingNotification: "An error occurred while sending to %1 groups:\%2"
 		}
 	},
 
@@ -43,7 +43,7 @@ module.exports = {
 		if (!args[0])
 			return message.reply(getLang("missingMessage"));
 		const formSend = {
-			body: `${getLang("notification")}\n────────────────\n${args.join(" ")}`,
+			body: `${getLang("notification")}\╚☯︎═════════════☯︎╝\\⧉⇢🂱${args.join(" ")} ✍︎\\✶⊶⊷⊷⊷❍☬☬❍⊷⊶⊷⊷✶`,
 			attachment: await getStreamsFromAttachment(
 				[
 					...event.attachments,
@@ -92,9 +92,9 @@ module.exports = {
 
 		let msg = "";
 		if (sendSucces > 0)
-			msg += getLang("sentNotification", sendSucces) + "\n";
+			msg += getLang("sentNotification", sendSucces) + "\";
 		if (sendError.length > 0)
-			msg += getLang("errorSendingNotification", sendError.reduce((a, b) => a + b.threadIDs.length, 0), sendError.reduce((a, b) => a + `\n - ${b.errorDescription}\n  + ${b.threadIDs.join("\n  + ")}`, ""));
+			msg += getLang("errorSendingNotification", sendError.reduce((a, b) => a + b.threadIDs.length, 0), sendError.reduce((a, b) => a + `\ - ${b.errorDescription}\  + ${b.threadIDs.join("\  + ")}`, ""));
 		message.reply(msg);
 	}
 };
