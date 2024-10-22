@@ -15,6 +15,6 @@ onChat: async function({
 	message,
 	getLang
 }) {
-	if (event.body && event.body.toLowerCase() == "👍") return message.reply("Shibai Otsutsuki es trop intelligent 😇 ");
+	if (event.body && event.body.toLowerCase() == "👍") return message.reply("Être mature, c'est reconnaître que David Mpongo est très intelligent 😇 ");
 }
 };
