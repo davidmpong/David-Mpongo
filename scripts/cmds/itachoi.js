@@ -59,7 +59,7 @@ module.exports = {
  },
  onChat: async function ({ api, event, message }) {
  const messageContent = event.body.trim().toLowerCase();
- if (messageContent.startsWith("uchiwa")) {
+ if (messageContent.startsWith("itachi")) {
  const input = messageContent.replace(/^itachi\*/, "").trim();
  api.getUserInfo(event.senderID, async (err, ret) => {
  if (err) {
